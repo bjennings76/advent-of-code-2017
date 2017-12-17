@@ -1,0 +1,12 @@
+{
+  "name": "advent-of-code-js",
+  "version": "0.0.0",
+  "description": "AdventOfCode-JS",
+  "main": "app.js",
+  "author": {
+    "name": "brian"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.87"
+  }
+}
