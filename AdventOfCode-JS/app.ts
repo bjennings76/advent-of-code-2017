@@ -4,9 +4,9 @@
 //import day02 = require("./Day02");
 //import day03 = require("./Day03");
 //import day04 = require("./Day04");
-import day05 = require("./Day05");
+//import day05 = require("./Day05");
+import day06 = require("./Day06");
 
-//import day06 = require("./Day06");
 //import day07 = require("./Day07");
 //import day08 = require("./Day08");
 //import day09 = require("./Day09");
@@ -24,9 +24,9 @@ import day05 = require("./Day05");
 //run(day02, true);
 //run(day03, true);
 //run(day04, true);
-run(day05);
+//run(day05, true);
+run(day06);
 
-//run(day06);
 //run(day07);
 //run(day08);
 //run(day09);
@@ -48,14 +48,15 @@ function run(day, last = false) {
     else day.inputs.forEach(runInput);
 
     function runInput(input, i) {
-        if (input.length < 40 && !input.includes('\n'))
-            console.log(`${day.title} Solution #${(i + 1)} for '${input}':`);
+        if (input.length < 40 && !input.includes('\n')) {
+            console.log(`${day.title} Solution #${(i + 1)} for '${input.replace(/\s+/g, ' ')}':`);
+        }
         else
             console.log(`${day.title} Solution ${(i + 1)}:`);
-        var t0 = process.hrtime();
+        const t0 = process.hrtime();
         day.solve(input);
-        var t1 = process.hrtime(t0);
-        var duration = t1[0] * 1000 + t1[1] / 1000000;
+        const t1 = process.hrtime(t0);
+        const duration = t1[0] * 1000 + t1[1] / 1000000;
         console.log(`(${duration.toFixed(2)}ms)\n`);
     }
 }
