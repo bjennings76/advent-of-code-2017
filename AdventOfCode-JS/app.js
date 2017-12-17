@@ -3,12 +3,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 //import day01 = require("./Day01");
 //import day02 = require("./Day02");
-var day04 = require("./Day04");
+var day03 = require("./Day03");
+//import day04 = require("./Day04");
 //import day16 = require("./Day16");
 //import day17 = require("./Day17");
 //run(day01, true);
 //run(day02, true);
-run(day04, true);
+run(day03);
+//run(day04, true);
 //run(day16, true);
 //run(day17, true);
 pressAnyKey();
