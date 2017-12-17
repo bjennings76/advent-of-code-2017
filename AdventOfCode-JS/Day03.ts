@@ -6,7 +6,7 @@ export var solve = input => {
 };
 
 function solveA(input) {
-    const grid = [];
+    const grid: boolean[][] = [];
     let row = 0;
     let col = 0;
     let cell = 1;
@@ -26,7 +26,7 @@ function solveA(input) {
         const right = grid[row][col + 1];
 
         // Initial spot. Go right.
-        if (!up && !down && !left && !right) { grid[row][col] = 1; col++; }
+        if (!up && !down && !left && !right) { grid[row][col] = true; col++; }
         else if (left && !up && !right) row--;
         else if (!left && !up && down) col--;
         else if (!down && right && !left) row++;
@@ -36,7 +36,7 @@ function solveA(input) {
 }
 
 function solveB(input) {
-    const grid = [];
+    const grid: number[][] = [];
     let row = 0;
     let col = 0;
     let total = 1;

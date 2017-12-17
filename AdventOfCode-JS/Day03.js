@@ -23,7 +23,7 @@ function solveA(input) {
         var right = grid[row][col + 1];
         // Initial spot. Go right.
         if (!up && !down && !left && !right) {
-            grid[row][col] = 1;
+            grid[row][col] = true;
             col++;
         }
         else if (left && !up && !right)

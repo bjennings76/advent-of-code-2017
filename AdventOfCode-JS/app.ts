@@ -5,9 +5,9 @@
 //import day03 = require("./Day03");
 //import day04 = require("./Day04");
 //import day05 = require("./Day05");
-import day06 = require("./Day06");
+//import day06 = require("./Day06");
 
-//import day07 = require("./Day07");
+import day07 = require("./Day07");
 //import day08 = require("./Day08");
 //import day09 = require("./Day09");
 //import day10 = require("./Day10");
@@ -25,9 +25,9 @@ import day06 = require("./Day06");
 //run(day03, true);
 //run(day04, true);
 //run(day05, true);
-run(day06);
+//run(day06, true);
 
-//run(day07);
+run(day07);
 //run(day08);
 //run(day09);
 //run(day10);
