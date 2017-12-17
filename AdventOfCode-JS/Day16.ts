@@ -1,5 +1,7 @@
 ﻿// http://adventofcode.com/2017/day/16
 
+export var title = "Day 16";
+
 export function solve(input) {
     const original = 'abcdefghijklmnop';
     let line = original.split('');

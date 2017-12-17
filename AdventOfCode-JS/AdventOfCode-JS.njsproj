@@ -32,12 +32,15 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Day02.ts" />
     <TypeScriptCompile Include="Day17.ts" />
     <TypeScriptCompile Include="Day16.ts" />
     <TypeScriptCompile Include="app.ts" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="Day01.ts" />
+    <TypeScriptCompile Include="Day04.ts" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

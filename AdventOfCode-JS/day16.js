@@ -1,6 +1,7 @@
 "use strict";
 // http://adventofcode.com/2017/day/16
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.title = "Day 16";
 function solve(input) {
     var original = 'abcdefghijklmnop';
     var line = original.split('');

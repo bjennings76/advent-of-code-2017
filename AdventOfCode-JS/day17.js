@@ -1,6 +1,7 @@
 "use strict";
 // http://adventofcode.com/2017/day/16
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.title = "Day 17";
 function solve(input) {
     solve17A(input);
     solve17B(input);
