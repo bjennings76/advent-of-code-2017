@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //import day01 = require("./Day01");
 //import day02 = require("./Day02");
 //import day03 = require("./Day03");
@@ -6,9 +7,8 @@
 //import day05 = require("./Day05");
 //import day06 = require("./Day06");
 //import day07 = require("./Day07");
-//import day08 = require("./Day08");
-Object.defineProperty(exports, "__esModule", { value: true });
-var day09 = require("./Day09");
+var day08 = require("./Day08");
+//import day09 = require("./Day09");
 //import day10 = require("./Day10");
 //import day11 = require("./Day11");
 //import day12 = require("./Day12");
@@ -24,8 +24,8 @@ var day09 = require("./Day09");
 //run(day05, true);
 //run(day06, true);
 //run(day07, true);
-//run(day08, true);
-run(day09);
+run(day08, true);
+//run(day09);
 //run(day10);
 //run(day11);
 //run(day12);

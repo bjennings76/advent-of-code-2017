@@ -42,6 +42,10 @@
     <TypeScriptCompile Include="Day17.ts" />
     <TypeScriptCompile Include="Day16.ts" />
     <TypeScriptCompile Include="app.ts" />
+    <Content Include="Day08-input.txt" />
+    <Content Include="Day09-input.txt">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
