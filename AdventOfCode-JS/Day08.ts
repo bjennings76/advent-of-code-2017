@@ -4,87 +4,63 @@ export var title = "Day 8";
 
 export var solve = input => {
     var registers = {};
-    var instructions = getInstructions(input, registers);
-    var highestRunning = null;
-    instructions.forEach((i) => {
+    var highestEver = 0;
+    var getHighest = () => Object.keys(registers).map(k => registers[k]).reduce((h, v) => Math.max(h, v), 0);
+
+    input.split('\n').map((i) => new Instruction(i, registers)).forEach((i) => {
         i.run();
-        var h = getHighestRegister(registers);
-        if (highestRunning == null || h > highestRunning)
-            highestRunning = h;
+        highestEver = Math.max(getHighest(), highestEver);
     });
 
-    console.log("Part 1: Highest = " + getHighestRegister(registers));
-    console.log("Part 2: Highest Running = " + highestRunning);
-}
+    var highest = getHighest();
 
-function getHighestRegister(registers) {
-    var highest = null;
-    for (var r in registers) {
-        var value = registers[r];
-        if (highest == null || value > highest) {
-            highest = value;
-        }
-    }
-    return highest;
-}
+    console.log(`Part 1: Highest = ${highest}`);
+    console.log(`Part 2: Highest Running = ${highestEver}`);
+};
 
-function getInstructions(input, registers) {
-    return input.split('\n').map((i) => new Instruction(i, registers));
-}
+class Instruction {
+    private readonly registers;
+    private readonly checkValue;
+    private readonly checkTest;
+    private readonly checkRegister;
+    private readonly register;
+    private readonly mod;
 
-function Instruction(input, registers) {
-    this.text = input;
-    const match = input.match(/^(\w+) (inc|dec) ([-0-9]+) if (\w+) ([^\s]+) ([-0-9]+)/);
-    this.sign = match[2] == "inc" ? "+" : "-";
-    this.register = match[1];
-    this.mod = Number(match[3]);
-    if (match[2] == "dec") this.mod *= -1;
-    var checkRegister = match[4];
+    run() { if (this.check()) this.registers[this.register] += this.mod; }
 
-    if (registers[checkRegister] == undefined) {
-        registers[checkRegister] = 0;
-    }
+    private check() {
+        const a = this.registers[this.checkRegister];
+        const b = this.checkValue;
 
-    var checkTest = match[5];
-    var checkValue = Number(match[6]);
-
-    this.checkSummary = registers[checkRegister] + " " + checkTest + " " + checkValue;
-
-    this.run = function () {
-        if (!this.check()) {
-            return;
-        }
-
-        registers[this.register] += this.mod;
-    }
-
-    this.check = () => {
-        var a = registers[checkRegister];
-        var b = checkValue;
-
-        switch (checkTest) {
-        case "<":
-            return a < b;
-        case "<=":
-            return a <= b;
-        case ">":
-            return a > b;
-        case ">=":
-            return a >= b;
-        case "==":
-            return a == b;
-        case "!=":
-            return a != b;
-        default:
-            throw ("Don't recognize " + checkTest);
+        switch (this.checkTest) {
+            case "<":
+                return a < b;
+            case "<=":
+                return a <= b;
+            case ">":
+                return a > b;
+            case ">=":
+                return a >= b;
+            case "==":
+                return a == b;
+            case "!=":
+                return a != b;
+            default:
+                throw (`Don't recognize ${this.checkTest}`);
         }
     }
 
-    this.checkResult = this.check();
+    constructor(input, registers) {
+        this.registers = registers;
+        const match = input.match(/^(\w+) (inc|dec) ([-0-9]+) if (\w+) ([^\s]+) ([-0-9]+)/);
+        this.register = match[1];
+        this.mod = match[2] == "dec" ? -Number(match[3]) : Number(match[3]);
+        this.checkRegister = match[4];
+        this.checkTest = match[5];
+        this.checkValue = Number(match[6]);
 
-
-    if (registers[this.register] == undefined) {
-        registers[this.register] = 0;
+        this.registers[this.register] = this.registers[this.register] || 0;
+        this.registers[this.checkRegister] = this.registers[this.checkRegister] || 0;
     }
 }
 
