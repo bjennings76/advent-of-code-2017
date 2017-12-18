@@ -8,5 +8,6 @@
   },
   "devDependencies": {
     "@types/node": "^6.0.94"
-  }
+  },
+  "dependencies": {}
 }

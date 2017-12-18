@@ -27,6 +27,19 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
+    <TypeScriptTarget>ES2016</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +48,7 @@
     <TypeScriptCompile Include="Day03.ts" />
     <TypeScriptCompile Include="Day02.ts" />
     <TypeScriptCompile Include="Day18.ts" />
+    <TypeScriptCompile Include="Day12.ts" />
     <TypeScriptCompile Include="Day11.ts" />
     <TypeScriptCompile Include="Day10.ts" />
     <TypeScriptCompile Include="Day09.ts" />
@@ -51,9 +65,9 @@
     <Content Include="Day09-input.txt">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Day12-input.txt" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="tsconfig.json" />
     <TypeScriptCompile Include="Day01.ts" />
     <TypeScriptCompile Include="Day04.ts" />
   </ItemGroup>

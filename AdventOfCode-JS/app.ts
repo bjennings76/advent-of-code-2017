@@ -1,44 +1,26 @@
-﻿//import day01 = require("./Day01");
-//import day02 = require("./Day02");
-//import day03 = require("./Day03");
-//import day04 = require("./Day04");
-//import day05 = require("./Day05");
-//import day06 = require("./Day06");
-//import day07 = require("./Day07");
-//import day08 = require("./Day08");
-//import day09 = require("./Day09");
-//import day10 = require("./Day10");
+﻿// http://adventofcode.com/2017/
 
-import day18 = require("./Day18");
-//import day12 = require("./Day12");
-//import day13 = require("./Day13");
-//import day14 = require("./Day14");
-//import day15 = require("./Day15");
+//import day01 = require("./Day01"); run(day01);
+//import day02 = require("./Day02"); run(day02);
+//import day03 = require("./Day03"); run(day03);
+//import day04 = require("./Day04"); run(day04);
+//import day05 = require("./Day05"); run(day05);
+//import day06 = require("./Day06"); run(day06);
+//import day07 = require("./Day07"); run(day07);
+//import day08 = require("./Day08"); run(day08);
+//import day09 = require("./Day09"); run(day09);
+//import day10 = require("./Day10"); run(day10);
+//import day11 = require("./Day11"); run(day11);
+import day12 = require("./Day12"); run(day12);
 
-//import day16 = require("./Day16");
-//import day17 = require("./Day17");
+//import day13 = require("./Day13"); run(day13);
+//import day14 = require("./Day14"); run(day14);
+//import day15 = require("./Day15"); run(day15);
+
+//import day16 = require("./Day16"); run(day16);
+//import day17 = require("./Day17"); run(day17);
 
 var lastOnly = false;
-
-//run(day01);
-//run(day02);
-//run(day03);
-//run(day04);
-//run(day05);
-//run(day06);
-//run(day07);
-//run(day08);
-//run(day09);
-//run(day10);
-
-run(day18);
-//run(day12);
-//run(day13);
-//run(day14);
-//run(day15);
-
-//run(day16);
-//run(day17);
 
 pressAnyKey();
 

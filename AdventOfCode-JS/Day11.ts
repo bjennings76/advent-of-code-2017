@@ -15,8 +15,9 @@ export var inputs = [
 export var solve = input => new Location(input).logSolution();
 
 class Location {
+    private readonly coord;
+
     logSolution;
-    coord;
 
     get ne()  { return  this.coord[0]; }
     set ne(v) { this.coord[0] =  v; }

@@ -8,21 +8,21 @@ function solve(input) {
 }
 exports.solve = solve;
 function solveA(input) {
-    var pos = 0;
-    var buffer = [0];
-    for (var i = 1; i <= 2017; i++) {
+    let pos = 0;
+    const buffer = [0];
+    for (let i = 1; i <= 2017; i++) {
         pos += input;
         pos = pos % buffer.length;
         pos++;
         buffer.splice(pos, 0, i);
     }
-    console.log("Value after 2017: " + buffer[pos + 1]);
+    console.log(`Value after 2017: ${buffer[pos + 1]}`);
 }
 function solveB(input) {
-    var pos = 0;
-    var length = 1;
-    var targetValue = 0;
-    for (var i = 1; i <= 5e7; i++) {
+    let pos = 0;
+    let length = 1;
+    let targetValue = 0;
+    for (let i = 1; i <= 5e7; i++) {
         pos += input;
         pos = pos % length;
         pos++;
@@ -31,7 +31,7 @@ function solveB(input) {
             targetValue = i;
         }
     }
-    console.log("Value after 5,000,000: " + targetValue);
+    console.log(`Value after 5,000,000: ${targetValue}`);
 }
 exports.inputs = [3, 394];
 //# sourceMappingURL=Day17.js.map
