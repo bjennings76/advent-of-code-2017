@@ -4,10 +4,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require('fs');
 exports.title = "Day 9";
 exports.inputs = [fs.readFileSync('Day09-input.txt', "utf8")];
-exports.solve = input => {
+exports.solve = function (input) {
     var data = new Data(input);
-    console.log(`Part 1: totalScore = ${data.totalScore}`);
-    console.log(`Part 2: garbageCount = ${data.garbageCount}`);
+    console.log("Part 1: totalScore = " + data.totalScore);
+    console.log("Part 2: garbageCount = " + data.garbageCount);
 };
 function Data(input) {
     var i = 0;
@@ -30,10 +30,10 @@ function Group(data, depth) {
     data.totalScore += depth;
     this.parse = function () {
         while (data.hasMore()) {
-            const c = data.pop();
+            var c = data.pop();
             switch (c) {
                 case "{":
-                    const group = new Group(data, depth + 1);
+                    var group = new Group(data, depth + 1);
                     data.groupCount += 1;
                     this.groups.push(group);
                     this.content += "{}";
@@ -56,8 +56,8 @@ function Group(data, depth) {
     };
     this.parse();
 }
-class Garbage {
-    constructor(data) {
+var Garbage = /** @class */ (function () {
+    function Garbage(data) {
         this.content = "";
         while (data.hasMore() && (c != ">")) {
             var c = data.pop();
@@ -74,5 +74,6 @@ class Garbage {
             }
         }
     }
-}
+    return Garbage;
+}());
 //# sourceMappingURL=Day09.js.map

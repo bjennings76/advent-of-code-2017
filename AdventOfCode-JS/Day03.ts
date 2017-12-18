@@ -41,7 +41,7 @@ function solveB(input) {
     const grid: number[][] = [];
     let row = 0;
     let col = 0;
-    let total = 1;
+    let total:number = 1;
 
     while (total < input) {
         // Initialize grid rows if missing.

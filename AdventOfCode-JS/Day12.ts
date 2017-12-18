@@ -68,17 +68,17 @@ function getCleanInput(data) {
 }
 
 function getConnections(rootId, lookup) {
-    const queue = [rootId];
+    const queue: number[] = [rootId];
     const connections:number[] = [];
 
     while (queue.length > 0) {
         var id = queue.pop();
-        if (!connections.includes(id)) {
+        if (connections.indexOf(id) >= 0) {
             connections.push(id);
-            var list = getList(id, lookup);
+            var list: number[] = getList(id, lookup);
 
             for (var i in list) {
-                if (!queue.includes(list[i])) {
+                if (queue.indexOf(list[i]) >= 0) {
                     queue.push(list[i]);
                 }
             }
@@ -89,6 +89,6 @@ function getConnections(rootId, lookup) {
 }
 
 
-function getList(id, lookup) {
+function getList(id: number, lookup: {}) {
     return lookup[id] || (lookup[id] = []);
 }

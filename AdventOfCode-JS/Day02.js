@@ -2,24 +2,24 @@
 // http://adventofcode.com/2017/day/2
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.title = "Day 2";
-exports.solve = input => {
+exports.solve = function (input) {
     var lines = input.split("\n");
-    var diff = line => Math.max(...line) - Math.min(...line);
-    var divideIfEven = (n1, n2) => (n1 > n2 && n1 % n2 == 0) ? n1 / n2 : (n2 > n1 && n2 % n1 == 0) ? n2 / n1 : 0;
-    var evenDivide = line => {
-        const seenValues = [];
-        return line.reduce((result, n1) => {
+    var diff = function (line) { return Math.max.apply(Math, line) - Math.min.apply(Math, line); };
+    var divideIfEven = function (n1, n2) { return (n1 > n2 && n1 % n2 == 0) ? n1 / n2 : (n2 > n1 && n2 % n1 == 0) ? n2 / n1 : 0; };
+    var evenDivide = function (line) {
+        var seenValues = [];
+        return line.reduce(function (result, n1) {
             if (result > 0)
                 return result;
-            result = seenValues.reduce((r, n2) => r > 0 ? r : divideIfEven(n1, n2), 0);
+            result = seenValues.reduce(function (r, n2) { return r > 0 ? r : divideIfEven(n1, n2); }, 0);
             seenValues.push(n1);
             return result;
         }, 0);
     };
-    const result1 = lines.reduce((total, line) => (total + diff(line.split(/\s+/).map(Number))), 0);
-    console.log(`Part 1: ${result1}`);
-    const result2 = lines.reduce((total, line) => (total + evenDivide(line.split(/\s+/).map(Number))), 0);
-    console.log(`Part 2: ${result2}`);
+    var result1 = lines.reduce(function (total, line) { return (total + diff(line.split(/\s+/).map(Number))); }, 0);
+    console.log("Part 1: " + result1);
+    var result2 = lines.reduce(function (total, line) { return (total + evenDivide(line.split(/\s+/).map(Number))); }, 0);
+    console.log("Part 2: " + result2);
 };
 exports.inputs = [
     //    `5 9 2 8
@@ -28,21 +28,6 @@ exports.inputs = [
     //    `5 1 9 5
     //7 5 3
     //2 4 6 8`,
-    `3458	3471	163	1299	170	4200	2425	167	3636	4001	4162	115	2859	130	4075	4269
-2777	2712	120	2569	2530	3035	1818	32	491	872	113	92	2526	477	138	1360
-2316	35	168	174	1404	1437	2631	1863	1127	640	1745	171	2391	2587	214	193
-197	2013	551	1661	121	206	203	174	2289	843	732	2117	360	1193	999	2088
-3925	3389	218	1134	220	171	1972	348	3919	3706	494	3577	3320	239	120	2508
-239	947	1029	2024	733	242	217	1781	2904	2156	1500	3100	497	2498	3312	211
-188	3806	3901	261	235	3733	3747	3721	267	3794	3814	3995	3004	915	4062	3400
-918	63	2854	2799	178	176	1037	487	206	157	2212	2539	2816	2501	927	3147
-186	194	307	672	208	351	243	180	619	749	590	745	671	707	334	224
-1854	3180	1345	3421	478	214	198	194	4942	5564	2469	242	5248	5786	5260	4127
-3780	2880	236	330	3227	1252	3540	218	213	458	201	408	3240	249	1968	2066
-1188	696	241	57	151	609	199	765	1078	976	1194	177	238	658	860	1228
-903	612	188	766	196	900	62	869	892	123	226	57	940	168	165	103
-710	3784	83	2087	2582	3941	97	1412	2859	117	3880	411	102	3691	4366	4104
-3178	219	253	1297	3661	1552	8248	678	245	7042	260	581	7350	431	8281	8117
-837	80	95	281	652	822	1028	1295	101	1140	88	452	85	444	649	1247`
+    "3458\t3471\t163\t1299\t170\t4200\t2425\t167\t3636\t4001\t4162\t115\t2859\t130\t4075\t4269\n2777\t2712\t120\t2569\t2530\t3035\t1818\t32\t491\t872\t113\t92\t2526\t477\t138\t1360\n2316\t35\t168\t174\t1404\t1437\t2631\t1863\t1127\t640\t1745\t171\t2391\t2587\t214\t193\n197\t2013\t551\t1661\t121\t206\t203\t174\t2289\t843\t732\t2117\t360\t1193\t999\t2088\n3925\t3389\t218\t1134\t220\t171\t1972\t348\t3919\t3706\t494\t3577\t3320\t239\t120\t2508\n239\t947\t1029\t2024\t733\t242\t217\t1781\t2904\t2156\t1500\t3100\t497\t2498\t3312\t211\n188\t3806\t3901\t261\t235\t3733\t3747\t3721\t267\t3794\t3814\t3995\t3004\t915\t4062\t3400\n918\t63\t2854\t2799\t178\t176\t1037\t487\t206\t157\t2212\t2539\t2816\t2501\t927\t3147\n186\t194\t307\t672\t208\t351\t243\t180\t619\t749\t590\t745\t671\t707\t334\t224\n1854\t3180\t1345\t3421\t478\t214\t198\t194\t4942\t5564\t2469\t242\t5248\t5786\t5260\t4127\n3780\t2880\t236\t330\t3227\t1252\t3540\t218\t213\t458\t201\t408\t3240\t249\t1968\t2066\n1188\t696\t241\t57\t151\t609\t199\t765\t1078\t976\t1194\t177\t238\t658\t860\t1228\n903\t612\t188\t766\t196\t900\t62\t869\t892\t123\t226\t57\t940\t168\t165\t103\n710\t3784\t83\t2087\t2582\t3941\t97\t1412\t2859\t117\t3880\t411\t102\t3691\t4366\t4104\n3178\t219\t253\t1297\t3661\t1552\t8248\t678\t245\t7042\t260\t581\t7350\t431\t8281\t8117\n837\t80\t95\t281\t652\t822\t1028\t1295\t101\t1140\t88\t452\t85\t444\t649\t1247"
 ];
 //# sourceMappingURL=Day02.js.map

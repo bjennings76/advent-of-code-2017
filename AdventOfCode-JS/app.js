@@ -12,7 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //import day09 = require("./Day09"); run(day09);
 //import day10 = require("./Day10"); run(day10);
 //import day11 = require("./Day11"); run(day11);
-const day12 = require("./Day12"); run(day12);
+var day12 = require("./Day12");
+run(day12);
 //import day13 = require("./Day13"); run(day13);
 //import day14 = require("./Day14"); run(day14);
 //import day15 = require("./Day15"); run(day15);
@@ -27,16 +28,16 @@ function run(day) {
     else
         day.inputs.forEach(runInput);
     function runInput(input, i) {
-        const title = lastOnly ? `${day.title} Solution` : `${day.title} Solution #${(i + 1)}`;
+        var title = lastOnly ? day.title + " Solution" : day.title + " Solution #" + (i + 1);
         if (input.length >= 40 || input.includes('\n'))
-            console.log(`${title}:`);
+            console.log(title + ":");
         else
-            console.log(`${title} for '${input.replace(/\s+/g, ' ')}':`);
-        const t0 = process.hrtime();
+            console.log(title + " for '" + input.replace(/\s+/g, ' ') + "':");
+        var t0 = process.hrtime();
         day.solve(input);
-        const t1 = process.hrtime(t0);
-        const duration = t1[0] * 1000 + t1[1] / 1000000;
-        console.log(`(${duration.toFixed(2)}ms)\n`);
+        var t1 = process.hrtime(t0);
+        var duration = t1[0] * 1000 + t1[1] / 1000000;
+        console.log("(" + duration.toFixed(2) + "ms)\n");
     }
 }
 function pressAnyKey() {

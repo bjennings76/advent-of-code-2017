@@ -6,8 +6,8 @@
   "author": {
     "name": "brian"
   },
-  "devDependencies": {
-    "@types/node": "^6.0.94"
-  },
-  "dependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "@types/node": "^8.5.1"
+  }
 }

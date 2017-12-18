@@ -3,61 +3,61 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.title = "Day 16";
 function solve(input) {
-    const original = 'abcdefghijklmnop';
-    let line = original.split('');
-    let moveLine = line.slice();
-    const swapLine = line.slice();
-    const steps = input.trim().split(',');
-    const swaps = [];
-    const swap = (list, a, b) => {
-        const t = list[a];
+    var original = 'abcdefghijklmnop';
+    var line = original.split('');
+    var moveLine = line.slice();
+    var swapLine = line.slice();
+    var steps = input.trim().split(',');
+    var swaps = [];
+    var swap = function (list, a, b) {
+        var t = list[a];
         list[a] = list[b];
         list[b] = t;
     };
     // Process moves and save swaps.
-    steps.forEach(step => {
+    steps.forEach(function (step) {
         switch (step[0]) {
             case 's':
                 moveLine = moveLine.splice(-Number(step.substring(1))).concat(moveLine);
                 break;
             case 'x':
-                const pieces = step.substring(1).split('/').map(Number);
+                var pieces = step.substring(1).split('/').map(Number);
                 swap(moveLine, pieces[0], pieces[1]);
                 break;
             case 'p':
-                const programs = step.substring(1).split('/');
+                var programs = step.substring(1).split('/');
                 swaps.push(programs);
                 break;
             default:
-                console.log(`Unknown command: ${step}`);
+                console.log("Unknown command: " + step);
         }
     });
     // Process swaps.
-    swaps.forEach(s => swap(swapLine, swapLine.indexOf(s[0]), swapLine.indexOf(s[1])));
+    swaps.forEach(function (s) { return swap(swapLine, swapLine.indexOf(s[0]), swapLine.indexOf(s[1])); });
     // Create maps.
-    const moveMap = line.map(c => moveLine.indexOf(c));
-    const swapMap = swapLine.reduce((obj, char, i) => {
+    var moveMap = line.map(function (c) { return moveLine.indexOf(c); });
+    var swapMap = swapLine.reduce(function (obj, char, i) {
         obj[line[i]] = char;
         return obj;
     }, {});
     // Create converter using maps.
-    const convert = (last) => {
-        return last.reduce((next, c, i) => {
+    var convert = function (last) {
+        return last.reduce(function (next, c, i) {
             next[moveMap[i]] = swapMap[last[i]];
             return next;
         }, []);
     };
     // Memory so we can keep track of each solution found before it loops.
-    const memory = [original];
-    for (let i = 0; i < 1e9; i++) {
+    var memory = [original];
+    for (var i = 0; i < 1e9; i++) {
         line = convert(line);
-        const key = line.join('');
+        var key = line.join('');
         if (memory[0] == key) {
             break;
         }
         memory.push(key);
     }
-    console.log(`First: ${memory[1]}\nLast: ${memory[1e9 % memory.length]}`);
+    console.log("First: " + memory[1] + "\nLast: " + memory[1e9 % memory.length]);
 }
 exports.solve = solve;
 ;
