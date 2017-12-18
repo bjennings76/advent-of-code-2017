@@ -10,89 +10,63 @@ exports.inputs = [
     "se,sw,se,sw,sw",
     fs.readFileSync('Day11-input.txt', "utf8")
 ];
-exports.solve = function (input) { return new Location(input).logSolution(); };
-var Location = /** @class */ (function () {
-    function Location(input) {
-        var _this = this;
+exports.solve = input => new Location(input).logSolution();
+class Location {
+    get ne() { return this.coord[0]; }
+    set ne(v) { this.coord[0] = v; }
+    get sw() { return -this.coord[0]; }
+    set sw(v) { this.coord[0] = -v; }
+    get n() { return this.coord[1]; }
+    set n(v) { this.coord[1] = v; }
+    get s() { return -this.coord[1]; }
+    set s(v) { this.coord[1] = -v; }
+    get nw() { return this.coord[2]; }
+    set nw(v) { this.coord[2] = v; }
+    get se() { return -this.coord[2]; }
+    set se(v) { this.coord[2] = -v; }
+    constructor(input) {
         this.coord = [0, 0, 0];
         var furthest = 0;
-        var totalSteps = function () { return Math.abs(_this.coord[0]) + Math.abs(_this.coord[1]) + Math.abs(_this.coord[2]); };
-        var normalize = function () {
+        const totalSteps = () => Math.abs(this.coord[0]) + Math.abs(this.coord[1]) + Math.abs(this.coord[2]);
+        const normalize = () => {
             // normalize n <--> s
-            if (_this.nw > 0 && _this.ne > 0)
-                _this.nw--;
-            _this.ne--;
-            _this.n++;
-            if (_this.se > 0 && _this.sw > 0)
-                _this.se--;
-            _this.sw--;
-            _this.s++;
+            if (this.nw > 0 && this.ne > 0)
+                this.nw--;
+            this.ne--;
+            this.n++;
+            if (this.se > 0 && this.sw > 0)
+                this.se--;
+            this.sw--;
+            this.s++;
             // normalize nw <--> se
-            if (_this.n > 0 && _this.sw > 0)
-                _this.n--;
-            _this.sw--;
-            _this.nw++;
-            if (_this.s > 0 && _this.ne > 0)
-                _this.s--;
-            _this.ne--;
-            _this.se++;
+            if (this.n > 0 && this.sw > 0)
+                this.n--;
+            this.sw--;
+            this.nw++;
+            if (this.s > 0 && this.ne > 0)
+                this.s--;
+            this.ne--;
+            this.se++;
             // normalize ne <--> sw
-            if (_this.n > 0 && _this.se > 0)
-                _this.n--;
-            _this.se--;
-            _this.ne++;
-            if (_this.s > 0 && _this.nw > 0)
-                _this.s--;
-            _this.nw--;
-            _this.sw++;
+            if (this.n > 0 && this.se > 0)
+                this.n--;
+            this.se--;
+            this.ne++;
+            if (this.s > 0 && this.nw > 0)
+                this.s--;
+            this.nw--;
+            this.sw++;
         };
-        var step = function (direction) {
-            _this[direction]++;
+        const step = (direction) => {
+            this[direction]++;
             normalize();
             furthest = Math.max(totalSteps(), furthest);
         };
-        this.logSolution = function () {
-            input.trim().split(",").forEach(function (s) { return step(s); });
-            console.log("Part 1: total steps = " + totalSteps());
-            console.log("Part 2: furthest = " + furthest);
+        this.logSolution = () => {
+            input.trim().split(",").forEach((s) => step(s));
+            console.log(`Part 1: total steps = ${totalSteps()}`);
+            console.log(`Part 2: furthest = ${furthest}`);
         };
     }
-    Object.defineProperty(Location.prototype, "ne", {
-        get: function () { return this.coord[0]; },
-        set: function (v) { this.coord[0] = v; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Location.prototype, "sw", {
-        get: function () { return -this.coord[0]; },
-        set: function (v) { this.coord[0] = -v; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Location.prototype, "n", {
-        get: function () { return this.coord[1]; },
-        set: function (v) { this.coord[1] = v; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Location.prototype, "s", {
-        get: function () { return -this.coord[1]; },
-        set: function (v) { this.coord[1] = -v; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Location.prototype, "nw", {
-        get: function () { return this.coord[2]; },
-        set: function (v) { this.coord[2] = v; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Location.prototype, "se", {
-        get: function () { return -this.coord[2]; },
-        set: function (v) { this.coord[2] = -v; },
-        enumerable: true,
-        configurable: true
-    });
-    return Location;
-}());
+}
 //# sourceMappingURL=Day11.js.map
