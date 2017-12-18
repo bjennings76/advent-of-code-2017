@@ -9,7 +9,7 @@
 //import day09 = require("./Day09");
 //import day10 = require("./Day10");
 
-import day11 = require("./Day11");
+import day18 = require("./Day18");
 //import day12 = require("./Day12");
 //import day13 = require("./Day13");
 //import day14 = require("./Day14");
@@ -31,7 +31,7 @@ var lastOnly = false;
 //run(day09);
 //run(day10);
 
-run(day11);
+run(day18);
 //run(day12);
 //run(day13);
 //run(day14);
