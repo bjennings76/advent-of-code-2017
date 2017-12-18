@@ -1,15 +1,13 @@
-﻿// http://adventofcode.com/2017/day/16
-
-//import day01 = require("./Day01");
+﻿//import day01 = require("./Day01");
 //import day02 = require("./Day02");
 //import day03 = require("./Day03");
 //import day04 = require("./Day04");
 //import day05 = require("./Day05");
 //import day06 = require("./Day06");
 //import day07 = require("./Day07");
+//import day08 = require("./Day08");
 
-import day08 = require("./Day08");
-//import day09 = require("./Day09");
+import day09 = require("./Day09");
 //import day10 = require("./Day10");
 //import day11 = require("./Day11");
 //import day12 = require("./Day12");
@@ -27,9 +25,9 @@ import day08 = require("./Day08");
 //run(day05, true);
 //run(day06, true);
 //run(day07, true);
+//run(day08, true);
 
-run(day08);
-//run(day09);
+run(day09);
 //run(day10);
 //run(day11);
 //run(day12);
