@@ -34,6 +34,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Day03.ts" />
     <TypeScriptCompile Include="Day02.ts" />
+    <TypeScriptCompile Include="Day08.ts" />
     <TypeScriptCompile Include="Day07.ts" />
     <TypeScriptCompile Include="Day06.ts" />
     <TypeScriptCompile Include="Day05.ts" />

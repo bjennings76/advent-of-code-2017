@@ -1,4 +1,6 @@
-﻿export var title = "Day 2";
+﻿// http://adventofcode.com/2017/day/2
+
+export var title = "Day 2";
 
 export var solve = input => {
     var lines = input.split("\n");

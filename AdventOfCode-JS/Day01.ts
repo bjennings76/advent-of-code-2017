@@ -1,4 +1,6 @@
-﻿export var title = "Day 1";
+﻿// http://adventofcode.com/2017/day/1
+
+export var title = "Day 1";
 
 export var solve = input => {
     const offset = Number(input.length / 2);

@@ -1,4 +1,5 @@
 "use strict";
+// http://adventofcode.com/2017/day/4
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.title = "Day 4";
 exports.solve = function (input) {

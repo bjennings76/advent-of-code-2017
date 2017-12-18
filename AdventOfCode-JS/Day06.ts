@@ -1,4 +1,6 @@
-﻿export var title = "Day 6";
+﻿// http://adventofcode.com/2017/day/6
+
+export var title = "Day 6";
 
 export var solve = input => {
     var list = input.trim().split(/\s+/).map(n => parseInt(n));

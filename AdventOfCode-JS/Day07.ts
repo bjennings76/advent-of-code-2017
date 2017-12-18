@@ -1,4 +1,6 @@
-﻿export var title = "Day 7";
+﻿// http://adventofcode.com/2017/day/17
+
+export var title = "Day 7";
 
 export var solve = input => {
     var towers = getTowers(input);
