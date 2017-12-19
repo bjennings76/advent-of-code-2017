@@ -12,13 +12,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //import day09 = require("./Day09"); run(day09);
 //import day10 = require("./Day10"); run(day10);
 //import day11 = require("./Day11"); run(day11);
-var day12 = require("./Day12");
-run(day12);
+//import day12 = require("./Day12"); run(day12);
 //import day13 = require("./Day13"); run(day13);
 //import day14 = require("./Day14"); run(day14);
 //import day15 = require("./Day15"); run(day15);
 //import day16 = require("./Day16"); run(day16);
 //import day17 = require("./Day17"); run(day17);
+//import day18 = require("./Day17"); run(day18);
+var day19 = require("./Day19");
+run(day19);
 var lastOnly = false;
 pressAnyKey();
 function run(day) {
