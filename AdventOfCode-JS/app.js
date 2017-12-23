@@ -22,10 +22,10 @@ var isString_1 = require("./isString");
 //import day18 = require("./Day18"); run(day18);
 //import day19 = require("./Day19"); run(day19);
 //import day20 = require("./Day20"); run(day20);
-//import day21 = require("./Day21"); run(day21);
+var day21 = require("./Day21");
+run(day21);
 //import day22 = require("./Day22"); run(day22);
-var day23 = require("./Day23");
-run(day23);
+//import day23 = require("./Day23"); run(day23);
 pressAnyKey();
 function run(day) {
     var lastOnly = false;

@@ -65,7 +65,7 @@ var solve2Alt = function (n) {
         r['g'] = r['b'] - r['c'];
         r['b'] += 17;
     } while (r['g'] !== 0);
-    console.log("Part 2: " + r['h']);
+    console.log("Part 2: register 'h' = " + r['h']);
 };
 var solve2 = function (input) {
     var registers = "abcdefgh";
