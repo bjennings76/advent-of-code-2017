@@ -46,7 +46,7 @@ export var solve = input => {
             groups[id] = getConnections(id, lookup);
         }
     }
-    console.log(groups);
+    //console.log(groups);
     var connections = getConnections(0, lookup);
     connections.sort((n1, n2) => { return n1 - n2; });
 

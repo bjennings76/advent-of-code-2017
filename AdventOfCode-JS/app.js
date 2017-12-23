@@ -1,6 +1,7 @@
 "use strict";
-// http://adventofcode.com/2017/
 Object.defineProperty(exports, "__esModule", { value: true });
+// http://adventofcode.com/2017/
+var isString_1 = require("./isString");
 //import day01 = require("./Day01"); run(day01);
 //import day02 = require("./Day02"); run(day02);
 //import day03 = require("./Day03"); run(day03);
@@ -18,12 +19,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //import day15 = require("./Day15"); run(day15);
 //import day16 = require("./Day16"); run(day16);
 //import day17 = require("./Day17"); run(day17);
-//import day18 = require("./Day17"); run(day18);
-var day19 = require("./Day19");
-run(day19);
-var lastOnly = false;
+//import day18 = require("./Day18"); run(day18);
+//import day19 = require("./Day19"); run(day19);
+//import day20 = require("./Day20"); run(day20);
+//import day21 = require("./Day21"); run(day21);
+//import day22 = require("./Day22"); run(day22);
+var day23 = require("./Day23");
+run(day23);
 pressAnyKey();
 function run(day) {
+    var lastOnly = false;
     console.log();
     if (lastOnly)
         runInput(day.inputs[day.inputs.length - 1], 0);
@@ -31,7 +36,7 @@ function run(day) {
         day.inputs.forEach(runInput);
     function runInput(input, i) {
         var title = lastOnly ? day.title + " Solution" : day.title + " Solution #" + (i + 1);
-        if (input.length >= 40 || input.includes('\n'))
+        if (!isString_1.default(input) || input.length >= 40 || input.includes('\n'))
             console.log(title + ":");
         else
             console.log(title + " for '" + input.replace(/\s+/g, ' ') + "':");

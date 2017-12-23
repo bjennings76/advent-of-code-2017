@@ -35,7 +35,7 @@ exports.solve = function (input) {
             groups[id] = getConnections(id, lookup);
         }
     }
-    console.log(groups);
+    //console.log(groups);
     var connections = getConnections(0, lookup);
     connections.sort(function (n1, n2) { return n1 - n2; });
     console.log("Part 1: group count = " + Object.keys(groups).length);
